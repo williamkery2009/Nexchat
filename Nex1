@@ -1,0 +1,39 @@
+src/App.jsx      ← NexChat.jsx content paste
+index.html
+package.json
+vite.config.js
+package.json:
+{
+  "name": "nexchat",
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "@supabase/supabase-js": "^2.0.0"
+  },
+  "devDependencies": {
+    "vite": "^5.0.0",
+    "@vitejs/plugin-react": "^4.0.0"
+  }
+}
+vite.config.js:
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+export default defineConfig({ plugins: [react()] })
+index.html:
+<!DOCTYPE html>
+<html>
+  <head><meta charset="UTF-8"><title>NexChat ⚡</title></head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
+src/main.jsx:
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import App from './App'
+ReactDOM.createRoot(document.getElementById('root')).render(<App/>)
